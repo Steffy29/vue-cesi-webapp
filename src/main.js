@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router/index'
-import Webapp from './plugins/webapp'
 import i18n from './i18n';
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
@@ -14,7 +13,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'weathericons/css/weather-icons.css'
 import 'weathericons/css/weather-icons-wind.css'
 
-Vue.use(Webapp)
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
@@ -26,6 +24,9 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 library.add(faCloudSun)
 library.add(faBeer)
 library.add(faDragon)
+
+import Webapp from "./plugins/webapp";
+Vue.use(Webapp);
 
 Vue.config.productionTip = false
 

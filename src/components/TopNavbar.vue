@@ -35,13 +35,55 @@
         <span class="navbar-toggler-bar navbar-kebab"></span>
         <span class="navbar-toggler-bar navbar-kebab"></span>
       </button>
+
+      <collapse-transition>
+        <div class="collapse navbar-collapse show" v-show="showMenu">
+          <ul class="navbar-nav ml-auto">
+            <base-dropdown
+              tag="li"
+              :menu-on-right="false"
+              title-tag="a"
+              class="nav-item"
+              menu-classes="dropdown-navbar"
+            >
+              <a
+                slot="title"
+                href="#"
+                class="dropdown-toggle nav-link"
+                data-toggle="dropdown"
+                aria-expanded="true"
+              >
+                <div class="photo">
+                  <img src="img/anime6.png" />
+                </div>
+                <b class="caret d-none d-lg-block d-xl-block"></b>
+                <p class="d-lg-none">Log out</p>
+              </a>
+              <li class="nav-link">
+                <a href="#" class="nav-item dropdown-item">Profile</a>
+              </li>
+              <li class="nav-link">
+                <a href="#" class="nav-item dropdown-item">Settings</a>
+              </li>
+              <div class="dropdown-divider"></div>
+              <li class="nav-link">
+                <a href="#" class="nav-item dropdown-item">Log out</a>
+              </li>
+            </base-dropdown>
+          </ul>
+        </div>
+      </collapse-transition>
     </div>
   </nav>
 </template>
 
 <script>
+import { CollapseTransition } from 'vue2-transitions';
 
 export default {
+  components: {
+    CollapseTransition,
+  },
   computed: {
     routeName() {
       const { name } = this.$route;
