@@ -1,4 +1,4 @@
-# vue-cesi-webapp
+# CESI Webapp
 
 ## Project setup
 ```
